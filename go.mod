@@ -1,3 +1,3 @@
-module github.com/infobits-code/tz
+module github.com/infobits-io/tz
 
 go 1.21
