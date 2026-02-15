@@ -6,6 +6,8 @@ import (
 )
 
 func TestDecode(t *testing.T) {
+	t.Parallel()
+
 	tz, err := Decode("Europe/London")
 	if err != nil {
 		t.Errorf("Unexpected error: %v", err)
@@ -30,6 +32,8 @@ func TestDecode(t *testing.T) {
 }
 
 func TestTimezoneMethods(t *testing.T) {
+	t.Parallel()
+
 	tz := Timezone{
 		tzIdentifier:       "America/New_York",
 		defaultCountryCode: "US",

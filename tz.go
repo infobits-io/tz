@@ -2,7 +2,7 @@ package tz
 
 import "errors"
 
-// Decode returns the timezone for a given timezone string
+// Decode returns the timezone for a given timezone string.
 func Decode(timezoneString string) (*Timezone, error) {
 	// Check if the timezoneString is in the map
 	if timezone, ok := tzIdentifierToTimezone[timezoneString]; ok {
@@ -10,7 +10,7 @@ func Decode(timezoneString string) (*Timezone, error) {
 	}
 
 	// If not, return an error
-	return nil, errors.New("Could not find country code for timezone")
+	return nil, errors.New("could not find country code for timezone")
 }
 
 type Timezone struct {
@@ -20,27 +20,27 @@ type Timezone struct {
 	utcOffset          float32
 }
 
-// Returns the tzIdentifier for the timezone
+// Returns the tzIdentifier for the timezone.
 func (t Timezone) TzIdentifier() string {
 	return t.tzIdentifier
 }
 
-// Returns the default country code for the timezone
+// Returns the default country code for the timezone.
 func (t Timezone) CountryCode() string {
 	return t.defaultCountryCode
 }
 
-// Return all the country codes for the timezone
+// Return all the country codes for the timezone.
 func (t Timezone) CountryCodes() []string {
 	return append(t.otherCountryCodes, t.defaultCountryCode)
 }
 
-// Returns the UTC offset for the timezone
+// Returns the UTC offset for the timezone.
 func (t Timezone) UtcOffset() float32 {
 	return t.utcOffset
 }
 
-// List of tzIdentifiers to timezones
+// List of tzIdentifiers to timezones.
 var tzIdentifierToTimezone = map[string]Timezone{
 	"Europe/London": {
 		tzIdentifier:       "Europe/London",
