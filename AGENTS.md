@@ -40,4 +40,4 @@ make help      # Print available targets
 
 1. Run `make lint` before committing
 2. Run `make test` to verify changes
-3. CI runs lint, test (Go 1.25/1.26 matrix), and build as separate jobs
+3. CI runs lint, test, and build as separate jobs (Go 1.26)
