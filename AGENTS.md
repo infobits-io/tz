@@ -7,10 +7,11 @@
 ## Project Structure
 
 ```
-tz.go          # Main package: timezone data map + Decode function + Timezone type
-tz_test.go     # Tests
+tz.go          # Package API: Decode, IsValid, All, ByCountryCode, ByUtcOffset, Current
+data.go        # Timezone data map (400+ IANA entries)
+tz_test.go     # Tests, benchmarks, and examples
 go.mod         # Go 1.26, no external dependencies
-Makefile       # Development commands (lint, test, build)
+Makefile       # Development commands (lint, test, build, coverage, bench)
 .golangci.yml  # Linter configuration (golangci-lint v2)
 ```
 
@@ -20,6 +21,10 @@ Makefile       # Development commands (lint, test, build)
 make lint      # Run golangci-lint (includes auto-fix)
 make test      # Run tests with -v -race
 make build     # Build the package
+make coverage  # Run tests with coverage report
+make bench     # Run benchmarks with memory stats
+make clean     # Remove generated artifacts
+make help      # Print available targets
 ```
 
 ## Code Conventions
@@ -35,4 +40,4 @@ make build     # Build the package
 
 1. Run `make lint` before committing
 2. Run `make test` to verify changes
-3. CI runs lint, test, and build as separate jobs
+3. CI runs lint, test, and build as separate jobs (Go 1.26)
