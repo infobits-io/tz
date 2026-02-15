@@ -1,0 +1,7 @@
+{
+	"github.copilot.chat.commitMessageGeneration.instructions": [
+		{
+			"text": "Generate commit messages using Conventional Commits (conventionalcommits.org). Format: <type>(<scope>): <short description>\n\n<optional body>\n\n<optional footer>. Types: feat (new feature), fix (bug fix), docs (documentation only), style (formatting, no code change), refactor (no feature/fix), perf (performance), test (adding/fixing tests), build (build system/dependencies), ci (CI config), chore (maintenance). Scope should reflect the affected module or package (e.g., api, auth, db, ui, config). Rules: first line MUST be under 72 chars, use imperative mood ('add' not 'added' or 'adds'), no period at end of subject line, separate subject from body with blank line. If there are breaking changes, add 'BREAKING CHANGE:' in the footer or append '!' after the type/scope (e.g., 'feat(api)!: remove deprecated endpoint'). Keep the subject concise and specific — describe WHAT changed, not HOW. Use the body to explain WHY if the change is non-obvious."
+		}
+	]
+}
